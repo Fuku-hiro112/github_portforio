@@ -1,10 +1,23 @@
-# Portfolio Site
+# Hirokazu Fukuda - Portfolio
 
-転職活動用のポートフォリオサイト。GitHubのpublicリポジトリを自動取得・表示し、ISRにより定期的に最新状態へ更新されます。
+**ポートフォリオサイトは下記URLで公開中です。**
 
-## デモ
+### [https://github-portforio.vercel.app](https://github-portforio.vercel.app)
 
-https://github-portforio.vercel.app
+経歴・スキル・実績・GitHubリポジトリ一覧をまとめたポートフォリオサイトです。
+リポジトリの追加・更新は自動で反映されます。
+
+---
+
+## サイトの内容
+
+| セクション | 内容 |
+|-----------|------|
+| **About** | 自己紹介・職務概要 |
+| **Skills** | 言語・ツール・クラウドのスキル一覧 |
+| **Experience** | 職務経歴と具体的な実績（状況・行動・成果） |
+| **Projects** | GitHubのpublicリポジトリを自動取得して表示 |
+| **Certifications** | 保有資格一覧 |
 
 ## 技術スタック
 
@@ -39,6 +52,34 @@ https://github-portforio.vercel.app
 
 Webhook不要、Cron不要。Next.jsのISRがすべてを処理します。
 
+## 経歴・スキル情報の更新方法
+
+職務経歴書や業務経歴書（`documents/` 内のPDF）を更新した場合、以下の手順でサイトに反映します。
+
+### 1. `src/config/profile.ts` を編集
+
+サイトに表示されるすべての個人情報はこのファイルに集約されています。
+
+| データ | 変数名 | 内容 |
+|--------|--------|------|
+| 基本情報 | `PROFILE` | 名前・職種・所在地・自己紹介文 |
+| スキル | `SKILL_CATEGORIES` | 言語・ツール・クラウドとその経験年数 |
+| 職務経歴 | `EXPERIENCES` | 会社名・期間・業務概要・技術環境・具体的な実績 |
+| 個人制作 | `STUDENT_PROJECT` | 学生時代の制作物 |
+| 資格 | `CERTIFICATIONS` | 資格名・取得年月 |
+
+### 2. コミット & プッシュ
+
+```bash
+git add src/config/profile.ts
+git commit -m "update: 経歴情報を更新"
+git push origin main
+```
+
+### 3. 自動デプロイ
+
+mainブランチへのpushでVercelが自動的に再デプロイします。数分後にサイトに反映されます。
+
 ## プロジェクト構成
 
 ```
@@ -62,7 +103,7 @@ src/
     └── profile.ts            # 個人情報データ（スキル、資格、経歴）
 ```
 
-## セットアップ
+## ローカル開発
 
 ### 前提条件
 
@@ -107,11 +148,6 @@ http://localhost:3000 で確認できます。
 npm run build
 npm start
 ```
-
-## 個人情報の更新
-
-スキル・経歴・資格などの個人情報は `src/config/profile.ts` に集約されています。
-`documents/` フォルダ内のPDF（業務経歴書・職務経歴書）を更新した際は、このファイルを手動で編集してください。
 
 ## ライセンス
 
