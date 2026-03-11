@@ -1,4 +1,4 @@
-export const GITHUB_USERNAME = process.env.GITHUB_USERNAME ?? "fukuda-h";
+export const GITHUB_USERNAME = process.env.GITHUB_USERNAME ?? "Fuku-hiro112";
 export const GITHUB_TOKEN = process.env.GITHUB_TOKEN ?? "";
 
 export const REVALIDATE_INTERVAL = 3600; // 1時間（秒）
