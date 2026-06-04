@@ -2,19 +2,20 @@ import { PROFILE } from "@/config/profile";
 
 export default function HeroSection() {
   return (
-    <section className="pt-32 pb-20 bg-gradient-to-br from-blue-600 via-blue-700 to-indigo-800 text-white">
-      <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center gap-10">
-        <div className="w-36 h-36 rounded-full bg-white/20 border-4 border-white/40 flex items-center justify-center text-5xl font-bold shrink-0">
-          F
-        </div>
-        <div className="text-center md:text-left">
-          <h1 className="text-4xl md:text-5xl font-bold mb-3">
-            {PROFILE.name}
-          </h1>
-          <p className="text-xl md:text-2xl text-blue-200 mb-4">
-            {PROFILE.role}
+    <section className="relative pt-36 pb-20 border-b border-line">
+      <div className="max-w-5xl mx-auto px-6">
+        <p className="text-accent text-sm tracking-[0.25em] mb-6">ポートフォリオ</p>
+        <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-3 text-ink">
+          {PROFILE.name}
+        </h1>
+        <p className="font-display text-lg text-faint mb-8 tracking-wide">
+          {PROFILE.nameEn}
+        </p>
+        <div className="border-t border-line pt-6 space-y-3">
+          <p className="text-xl md:text-2xl text-ink font-medium">
+            {PROFILE.roleJa}
           </p>
-          <p className="text-blue-100 max-w-lg">
+          <p className="text-muted max-w-xl leading-relaxed">
             {PROFILE.location}在住。{PROFILE.bio}
           </p>
         </div>

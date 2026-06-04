@@ -3,23 +3,31 @@ interface TechTagProps {
   percentage: number;
 }
 
-const LANG_COLORS: Record<string, string> = {
-  TypeScript: "bg-blue-100 text-blue-800",
-  JavaScript: "bg-yellow-100 text-yellow-800",
-  Python: "bg-green-100 text-green-800",
-  "C#": "bg-purple-100 text-purple-800",
-  Java: "bg-red-100 text-red-800",
-  HTML: "bg-orange-100 text-orange-800",
-  CSS: "bg-pink-100 text-pink-800",
-  Shell: "bg-gray-200 text-gray-700",
-  Dockerfile: "bg-cyan-100 text-cyan-800",
+/* GitHub-style language dot colors — keeps identity while staying minimal */
+const LANG_DOT: Record<string, string> = {
+  TypeScript: "#3178c6",
+  JavaScript: "#dbab09",
+  Python: "#3572a5",
+  "C#": "#178600",
+  Java: "#b07219",
+  HTML: "#e34c26",
+  CSS: "#563d7c",
+  Shell: "#89e051",
+  Dockerfile: "#384d54",
+  ShaderLab: "#222c37",
+  HLSL: "#aace60",
 };
 
 export default function TechTag({ name, percentage }: TechTagProps) {
-  const color = LANG_COLORS[name] ?? "bg-gray-200 text-gray-700";
+  const dot = LANG_DOT[name] ?? "#9b988f";
   return (
-    <span className={`px-2 py-0.5 ${color} rounded text-xs font-medium`}>
-      {name} {percentage}%
+    <span className="inline-flex items-center gap-1.5 text-xs text-muted">
+      <span
+        className="inline-block w-2 h-2 rounded-full"
+        style={{ backgroundColor: dot }}
+      />
+      {name}
+      <span className="text-faint">{percentage}%</span>
     </span>
   );
 }

@@ -15,6 +15,7 @@ export const PROFILE = {
   name: "福田 寛和",
   nameEn: "Hirokazu Fukuda",
   role: "Software Engineer",
+  roleJa: "ソフトウェアエンジニア",
   location: "大阪府",
   bio: "セキュリティ製品開発の経験を持つソフトウェアエンジニア。",
   aboutParagraphs: [
@@ -126,3 +127,17 @@ export const CERTIFICATIONS: Certification[] = [
   { name: "Foundational C# with Microsoft", date: "2025年12月" },
   { name: "Microsoft Office Specialist Excel 2016", date: "2019年12月" },
 ];
+
+/**
+ * プロジェクトの開発スタイル（面接での誤解防止のため明記）
+ * "ai"   … コードの多くを Claude が生成（AI 駆動開発）
+ * "self" … 実装は自力。AI はレビュー/相談のみ
+ * 未登録のリポジトリ（学生制作など）はバッジなし
+ * キーは GitHub のリポジトリ名と一致させること
+ */
+export const PROJECT_BUILD: Record<string, "ai" | "self"> = {
+  "sd-forge-tools": "ai",
+  github_portforio: "ai",
+  zunda_ai_bot: "ai",
+  "pollen-notify": "self",
+};

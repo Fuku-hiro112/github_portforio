@@ -35,8 +35,8 @@ export default function ScrollFadeIn({
   return (
     <div
       ref={ref}
-      className={`transition-all duration-700 ${
-        isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+      className={`transition-all duration-500 ease-out ${
+        isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-3"
       } ${className}`}
     >
       {children}

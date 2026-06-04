@@ -1,14 +1,24 @@
 @import "tailwindcss";
 
-:root {
-  --background: #f9fafb;
-  --foreground: #1f2937;
+@theme inline {
+  /* Editorial Minimal palette */
+  --color-base: #faf9f6;        /* warm off-white background */
+  --color-surface: #ffffff;     /* cards / raised areas */
+  --color-ink: #1c1c1a;         /* primary text */
+  --color-muted: #6f6d66;       /* secondary text */
+  --color-faint: #9b988f;       /* tertiary / meta */
+  --color-line: #e7e4dd;        /* hairline borders */
+  --color-accent: #0f6e64;      /* deep teal accent */
+  --color-accent-dark: #0a4f48;
+  --color-accent-soft: #e3efeb; /* accent tint background */
+
+  --font-display: var(--font-fraunces), Georgia, "Times New Roman", serif;
+  --font-sans: var(--font-noto-sans-jp), ui-sans-serif, system-ui, sans-serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-inter), var(--font-noto-sans-jp), sans-serif;
+:root {
+  --background: var(--color-base);
+  --foreground: var(--color-ink);
 }
 
 html {
@@ -16,6 +26,18 @@ html {
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
+  background: var(--color-base);
+  color: var(--color-ink);
+  font-feature-settings: "palt" 1;
+}
+
+::selection {
+  background: var(--color-accent);
+  color: #fff;
+}
+
+/* Display headings use the optical-size axis of Fraunces */
+.font-display {
+  font-family: var(--font-display);
+  font-optical-sizing: auto;
 }

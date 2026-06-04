@@ -5,23 +5,21 @@ import SkillBadge from "@/components/ui/SkillBadge";
 
 export default function SkillsSection() {
   return (
-    <section id="skills" className="py-20 bg-white">
-      <div className="max-w-6xl mx-auto px-6">
-        <SectionHeading>Skills</SectionHeading>
-        <div className="grid md:grid-cols-3 gap-8">
+    <section id="skills" className="py-24 border-b border-line">
+      <div className="max-w-5xl mx-auto px-6">
+        <SectionHeading index="02" en="Skills">
+          スキル
+        </SectionHeading>
+        <div className="grid md:grid-cols-3 gap-10">
           {SKILL_CATEGORIES.map((category) => (
             <ScrollFadeIn key={category.title}>
-              <div className="bg-gray-50 rounded-xl p-6">
-                <h3 className="font-semibold text-lg mb-4 text-blue-700">
+              <div>
+                <h3 className="font-display text-lg text-ink mb-4 pb-2 border-b border-line">
                   {category.title}
                 </h3>
                 <div className="flex flex-wrap gap-2">
                   {category.skills.map((skill) => (
-                    <SkillBadge
-                      key={skill.name}
-                      skill={skill}
-                      colorClass={category.colorClass}
-                    />
+                    <SkillBadge key={skill.name} skill={skill} />
                   ))}
                 </div>
               </div>

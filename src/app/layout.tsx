@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
-import { Inter, Noto_Sans_JP } from "next/font/google";
+import { Fraunces, Noto_Sans_JP } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({
-  variable: "--font-inter",
+const fraunces = Fraunces({
+  variable: "--font-fraunces",
   subsets: ["latin"],
   display: "swap",
+  axes: ["opsz"],
 });
 
 const notoSansJP = Noto_Sans_JP({
@@ -34,7 +35,7 @@ export default function RootLayout({
   return (
     <html lang="ja">
       <body
-        className={`${inter.variable} ${notoSansJP.variable} font-sans antialiased`}
+        className={`${fraunces.variable} ${notoSansJP.variable} font-sans antialiased bg-base text-ink`}
       >
         {children}
       </body>

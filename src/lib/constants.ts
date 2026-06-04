@@ -7,9 +7,9 @@ export const GITHUB_API_BASE = "https://api.github.com";
 export const GITHUB_RAW_BASE = "https://raw.githubusercontent.com";
 
 export const NAV_LINKS = [
-  { href: "#about", label: "About" },
-  { href: "#skills", label: "Skills" },
-  { href: "#experience", label: "Experience" },
-  { href: "#projects", label: "Projects" },
-  { href: "#certifications", label: "Certifications" },
+  { href: "#about", label: "自己紹介" },
+  { href: "#skills", label: "スキル" },
+  { href: "#experience", label: "職務経歴" },
+  { href: "#projects", label: "制作物" },
+  { href: "#certifications", label: "資格" },
 ] as const;
