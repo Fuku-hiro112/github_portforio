@@ -21,7 +21,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
       </h3>
 
       {project.description && (
-        <p className="text-gray-600 text-sm mb-4 leading-relaxed line-clamp-3">
+        <p className="text-gray-600 text-sm mb-4 leading-relaxed whitespace-pre-line">
           {project.description}
         </p>
       )}
